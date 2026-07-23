@@ -14,8 +14,8 @@ export function Experience() {
         <Reveal key={`${role.company}-${role.dates}`}>
           <article className="grid grid-cols-1 gap-4 border-t border-paper/12 py-[30px] transition-[translate,border-color] duration-450 ease-out-expo hover:translate-x-2 hover:border-lime/40 sm:grid-cols-[200px_1fr] sm:gap-9">
             <div>
-              <div className="font-mono text-xs text-paper/50">{role.dates}</div>
-              <div className="mt-[5px] font-mono text-[11.5px] text-paper/38">
+              <div className="font-mono text-xs text-paper/55">{role.dates}</div>
+              <div className="mt-[5px] font-mono text-[11.5px] text-paper/50">
                 {role.location}
               </div>
             </div>

@@ -12,7 +12,7 @@ export const profile = {
   github: "https://github.com/RamboGj",
   linkedin: "https://www.linkedin.com/in/rambog/",
   resume: "/Joao_Rambo_resume.pdf",
-  portrait: "/profile.png",
+  portrait: "/profile.webp",
   location: "Blumenau, SC · Brazil",
   availability: "Open to Senior roles — remote",
 } as const;

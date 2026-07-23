@@ -1,0 +1,23 @@
+
+> joaorambo@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.11 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://26.149.108.178:3000
+✓ Ready in 665ms
+
+ GET / 200 in 4.5s (next.js: 4.1s, application-code: 389ms)
+ GET / 200 in 161ms (next.js: 5ms, application-code: 157ms)
+ GET /opengraph-image 200 in 763ms (next.js: 411ms, application-code: 352ms)
+ GET /opengraph-image 200 in 183ms (next.js: 2ms, application-code: 181ms)
+✓ Compiled in 303ms
+✓ Compiled in 73ms
+✓ Compiled in 93ms
+ GET / 200 in 182ms (next.js: 67ms, application-code: 115ms)
+ GET / 200 in 93ms (next.js: 4ms, application-code: 89ms)
+✓ Compiled in 74ms
+✓ Compiled in 38ms
+✓ Compiled in 65ms
+✓ Compiled in 112ms
+✓ Compiled in 70ms

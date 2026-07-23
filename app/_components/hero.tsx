@@ -103,7 +103,7 @@ export function Hero() {
 
           <Parallax
             speed={-0.18}
-            className="absolute bottom-[6%] left-[2%] z-[2] flex flex-col gap-0.5 rounded-[10px] border border-paper/10 bg-ink/60 px-[13px] py-2.5 font-mono text-[11px] text-paper/50 backdrop-blur-lg"
+            className="absolute bottom-[6%] left-[2%] z-[2] flex flex-col gap-0.5 rounded-[10px] border border-paper/10 bg-ink/75 px-[13px] py-2.5 font-mono text-[11px] text-paper/62 backdrop-blur-lg"
           >
             <span className="text-lime">{"// based in"}</span>
             {profile.location}
@@ -113,7 +113,7 @@ export function Hero() {
 
       <a
         href="#stack"
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 font-mono text-[11px] tracking-[0.15em] text-paper/40 uppercase"
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 font-mono text-[11px] tracking-[0.15em] text-paper/55 uppercase"
       >
         scroll ↓
       </a>

@@ -30,7 +30,7 @@ export function Marquee() {
       aria-hidden
       className="overflow-hidden border-y border-paper/10 py-[18px] whitespace-nowrap"
     >
-      <div className="flex w-max animate-marquee font-display text-xl font-semibold text-paper/35">
+      <div className="flex w-max animate-marquee font-display text-xl font-semibold text-paper/50">
         <Run />
         <Run />
       </div>
