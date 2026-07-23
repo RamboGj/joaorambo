@@ -88,18 +88,32 @@ const FONT_FILES = [
   ["JetBrainsMono-SemiBold.ttf", font.mono, 600],
 ] as const;
 
-/**
- * Reads the subsetted TTFs from `assets/fonts`. They are cut down to the
- * glyphs these images actually use to stay well inside the 500KB
- * `ImageResponse` bundle budget.
- */
-export async function loadFonts() {
+type FontFile = (typeof FONT_FILES)[number];
+
+async function read(files: readonly FontFile[]) {
   return Promise.all(
-    FONT_FILES.map(async ([file, name, weight]) => ({
+    files.map(async ([file, name, weight]) => ({
       name,
       data: await readFile(join(process.cwd(), "assets/fonts", file)),
       weight,
       style: "normal" as const,
     })),
   );
+}
+
+/**
+ * Reads the subsetted TTFs from `assets/fonts`. They are cut down to the
+ * glyphs these images actually use to stay well inside the 500KB
+ * `ImageResponse` bundle budget.
+ */
+export async function loadFonts() {
+  return read(FONT_FILES);
+}
+
+/**
+ * Just the display face — all the icons need, and a fifth of the bytes of
+ * loading the whole set for two glyphs.
+ */
+export async function loadDisplayFont() {
+  return read(FONT_FILES.filter(([, name]) => name === font.display));
 }

@@ -20,8 +20,11 @@ function Sparkle({ size }: { size: number }) {
   );
 }
 
-/** Lime monogram tile. */
-function Monogram({ size, radius, fontSize }: { size: number; radius: number; fontSize: number }) {
+/**
+ * Lime monogram tile — the brand mark. Shared with the favicon and Apple
+ * touch icon so the mark is identical everywhere it appears.
+ */
+export function Monogram({ size, radius, fontSize }: { size: number; radius: number; fontSize: number }) {
   return (
     <div
       style={{
