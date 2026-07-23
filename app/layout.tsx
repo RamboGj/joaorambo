@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     description: social,
     type: "website",
     locale: "en_US",
+    images: ["/og-image.png"]
   },
   twitter: {
     card: "summary_large_image",

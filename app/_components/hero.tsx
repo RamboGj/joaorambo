@@ -83,7 +83,7 @@ export function Hero() {
 
         <Parallax
           speed={-0.08}
-          className="relative flex h-[min(560px,66vh)] items-center justify-center"
+          className="relative flex h-[min(560px,66vh)] py-32 items-center justify-center"
         >
           <HeroSceneLazy />
 
