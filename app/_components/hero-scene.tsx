@@ -108,6 +108,8 @@ export function HeroScene() {
 
     const start = performance.now();
     let frame = 0;
+    let running = false;
+    let onScreen = true;
 
     const tick = () => {
       const t = (performance.now() - start) / 1000;
@@ -123,11 +125,37 @@ export function HeroScene() {
       frame = requestAnimationFrame(tick);
     };
 
-    if (reduced) renderer.render(scene, camera);
-    else tick();
+    // Only animate while the hero is on-screen and the tab is visible. Once
+    // scrolled past the fold, an always-on 60fps loop would keep burning mobile
+    // CPU and battery to render pixels no one can see.
+    const play = () => {
+      if (running || reduced) return;
+      running = true;
+      frame = requestAnimationFrame(tick);
+    };
+    const pause = () => {
+      if (!running) return;
+      running = false;
+      cancelAnimationFrame(frame);
+    };
+    const sync = () => (onScreen && !document.hidden ? play() : pause());
+
+    const observer = new IntersectionObserver(([entry]) => {
+      onScreen = entry.isIntersecting;
+      sync();
+    });
+    observer.observe(parent);
+    document.addEventListener("visibilitychange", sync);
+
+    // Paint one frame up front so the scene is there before the first tick,
+    // then let visibility drive the loop (reduced-motion stops at this frame).
+    renderer.render(scene, camera);
+    sync();
 
     return () => {
       cancelAnimationFrame(frame);
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", sync);
       window.removeEventListener("resize", onResize);
       window.removeEventListener("mousemove", onMouseMove);
       solid.dispose();

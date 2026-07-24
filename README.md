@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# joaorambo — Portfolio Landing Page
+
+The source for my personal portfolio: a single-page landing site introducing me as a
+Fullstack Software Engineer, with an interactive 3D hero, my experience, tech stack, and
+ways to get in touch.
+
+**🌐 Live site → [joaorambo.vercel.app](https://joaorambo.vercel.app)**
+
+---
+
+## About
+
+A fast, animated one-pager built with the App Router. Content is kept entirely in
+[`app/_data/profile.ts`](app/_data/profile.ts) so copy can be edited without touching
+layout. The page is composed of independent section components — hero, marquee, stats,
+highlights, experience, stack, and contact.
+
+Highlights:
+
+- **Interactive 3D hero** — a wireframe icosahedron with a vertex point cloud and drifting
+  motes rendered in [Three.js](https://threejs.org/), rotating on its own and leaning toward
+  the cursor. Respects `prefers-reduced-motion`.
+- **Scroll reveals** driven by an `IntersectionObserver`, with a `<noscript>` fallback so the
+  page still renders without JavaScript.
+- **SEO & social cards** — Open Graph and Twitter metadata plus a generated share card.
+- **Fully responsive**, accessible, and typography-forward using Space Grotesk, Manrope, and
+  JetBrains Mono.
+
+## Tech Stack
+
+| Area       | Tools                                        |
+| ---------- | -------------------------------------------- |
+| Framework  | [Next.js 16](https://nextjs.org) (App Router)|
+| Language   | [TypeScript](https://www.typescriptlang.org) |
+| UI         | [React 19](https://react.dev)                |
+| Styling    | [Tailwind CSS 4](https://tailwindcss.com)    |
+| 3D         | [Three.js](https://threejs.org)              |
+| Deployment | [Vercel](https://vercel.com)                 |
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description                       |
+| --------------- | --------------------------------- |
+| `npm run dev`   | Start the local dev server        |
+| `npm run build` | Create a production build         |
+| `npm run start` | Serve the production build        |
+| `npm run lint`  | Run ESLint                        |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+├── _components/    Section components (hero, stats, experience, stack, contact …)
+├── _data/          Site copy and content (profile.ts)
+├── _social/        Open Graph / share card artwork
+├── layout.tsx      Root layout, fonts, and metadata
+└── page.tsx        Page composition
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployed on [Vercel](https://vercel.com) with automatic builds on push to `main`.
 
-## Deploy on Vercel
+**Live at → [joaorambo.vercel.app](https://joaorambo.vercel.app)**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**João Rambo** — Fullstack Software Engineer
+
+- 🌐 [joaorambo.vercel.app](https://joaorambo.vercel.app)
+- 💼 [LinkedIn](https://www.linkedin.com/in/rambog/)
+- 🐙 [GitHub](https://github.com/RamboGj)
+- ✉️ jpramboguanabarar@gmail.com
